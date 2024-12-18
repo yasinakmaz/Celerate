@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Window xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Sefim.Pages.WindowPages.SefimWindows"
+             Title="SefimWindows">
+
+    <Window.TitleBar>
+        <TitleBar BackgroundColor="#181818" HeightRequest="50" Title="Özfiliz Yazılım" Subtitle="Sefim">
+            <TitleBar.Content>
+                <SearchBar Grid.Column="0" x:Name="SrcBar" Placeholder="Search" WidthRequest="200" HorizontalOptions="Start" VerticalOptions="Center"/>
+            </TitleBar.Content>
+            <TitleBar.TrailingContent>
+                <Grid Grid.Row="0" ColumnDefinitions="*,*,*,*" ColumnSpacing="10">
+                    <ActivityIndicator x:Name="ActLoad" Color="White" IsRunning="True" Grid.Column="0" HorizontalOptions="End"></ActivityIndicator>
+                    <ImageButton x:Name="ProfileImage" Grid.Column="1" HeightRequest="36" WidthRequest="36" BorderWidth="0" Source="user.png"></ImageButton>
+                    <Label x:Name="LblDisplayName" Grid.Column="2" VerticalOptions="Center"></Label>
+                    <ImageButton x:Name="BtnSettings" Grid.Column="3" HeightRequest="36" WidthRequest="36" BorderWidth="0" Clicked="BtnSettings_Clicked" BackgroundColor="Transparent" Source="settings.png"></ImageButton>
+                </Grid>
+            </TitleBar.TrailingContent>
+        </TitleBar>
+    </Window.TitleBar>
+</Window>

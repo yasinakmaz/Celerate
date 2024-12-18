@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Sefim.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:UserLoginPages="clr-namespace:Sefim.Pages.UserLogin"
+    xmlns:LoginService="clr-namespace:Sefim.Pages.LoginService"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False"
+    Title="Sefim">
+
+    <ShellContent
+        ContentTemplate="{DataTemplate LoginService:LoginServicePage}"
+        Route="MainPage"/>
+
+</Shell>
