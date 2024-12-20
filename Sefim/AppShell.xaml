@@ -5,12 +5,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:UserLoginPages="clr-namespace:Sefim.Pages.UserLogin"
     xmlns:LoginService="clr-namespace:Sefim.Pages.LoginService"
+    xmlns:Started="clr-namespace:Sefim.Pages.Started"
     Shell.FlyoutBehavior="Disabled"
     Shell.NavBarIsVisible="False"
     Title="Sefim">
 
     <ShellContent
-        ContentTemplate="{DataTemplate LoginService:LoginServicePage}"
+        ContentTemplate="{DataTemplate Started:StartedPage}"
         Route="MainPage"/>
 
 </Shell>

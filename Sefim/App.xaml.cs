@@ -7,6 +7,8 @@
         {
             InitializeComponent();
             windowSefim = WindowSefim;
+            SecureStorageService.LoadTaskSecureStorage();
+            SecureStorageService.GetToPublicService();
         }
 
         protected override Window CreateWindow(IActivationState? activationState)

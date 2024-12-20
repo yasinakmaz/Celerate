@@ -1,6 +1,11 @@
-﻿global using Sefim.Pages.LoginService;
+﻿global using Sefim.Models.LanguageModel;
+global using Sefim.Pages.LoginService;
 global using Sefim.Pages.UserLogin;
 global using Sefim.Pages.WindowPages;
+global using Sefim.Pages.Started;
+global using Sefim.Services.PublicServices;
+global using Sefim.Services.AuthService;
+global using Sefim.Services.TranslationServices;
 // --------------------------  //
 
 global using CommunityToolkit.Maui;
@@ -36,3 +41,10 @@ global using Microsoft.EntityFrameworkCore.ValueGeneration;
 // --------------------------  //
 
 global using Microsoft.Maui.Controls;
+global using Microsoft.Extensions.Logging;
+
+
+// --------------------------  //
+
+global using Google.Cloud.Translation;
+global using Google.Cloud.Translation.V2;

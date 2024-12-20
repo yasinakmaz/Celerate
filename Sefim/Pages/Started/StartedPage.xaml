@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Sefim.Pages.Started.StartedPage"
+             Title="StartedPage"
+             Style="{StaticResource Page}">
+
+    <Grid x:Name="StartedMainGrid" Margin="10">
+
+        <Grid x:Name="StartedInfoGrid" ColumnDefinitions="20*,20*,20*,20*" RowDefinitions="30,30,*,*,*,*,*" ColumnSpacing="10" RowSpacing="3" Margin="40">
+            <Label x:Name="LblStarted" Grid.Column="0" Grid.Row="0" Text="Başlarken" Style="{StaticResource StlStartedLbl}"></Label>
+            <Label x:Name="LblLanguage" Grid.Column="0" Grid.Row="1" Text="Dil Seçimi ↓" VerticalOptions="End" Style="{StaticResource StlStartedLbl}"></Label>
+            <CollectionView x:Name="LanguageData" Grid.Column="0" Grid.Row="2" VerticalOptions="Start" ItemsLayout="HorizontalGrid,1">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Border WidthRequest="100" StrokeShape="RoundRectangle 10">
+                                <Grid RowDefinitions="*,*,*">
+                                    <ImageButton x:Name="BtnFlag" Source="{Binding FlagImage}" Aspect="Center" CornerRadius="50" WidthRequest="50" HeightRequest="50"></ImageButton>
+                                    <Label x:Name="LblCountryName" Style="{StaticResource StlStartedLbl}" Text="{Binding CountryName}"></Label>
+                                    <Label x:Name="LblCountryLanguageName" Style="{StaticResource StlStartedLbl}" Text="{Binding LanguageName}"></Label>
+                                </Grid>
+                            </Border>
+                        </ViewCell>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+        
+    </Grid>
+    
+</ContentPage>
