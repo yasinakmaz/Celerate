@@ -38,7 +38,7 @@ namespace Celerate.Update
             _updateFolder = updateFolder;
         }
 
-        public UpdateService() : this("yasinakmaz", "Celerate", "Celerate.exe", @"C:\Update\Celerate")
+        public UpdateService() : this("yasinakmaz", "Celerate", "Celerate.exe", @"C:\Update\Celerate\")
         {
         }
 
