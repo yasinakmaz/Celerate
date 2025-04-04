@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="Celerate.Pages.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Celerate.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:toolkit="using:CommunityToolkit.WinUI.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel Orientation="Vertical" Margin="10">
+        <StackPanel Orientation="Vertical" Spacing="10">
+            <toolkit:SettingsExpander Description="Sql Yapılandırma Ayarları İçin Kullanınız" Header="SQL AYARLARI">
+                <toolkit:SettingsExpander.HeaderIcon>
+                    <FontIcon Glyph="&#xE723;"/>
+                </toolkit:SettingsExpander.HeaderIcon>
+                <toolkit:SettingsExpander.Items>
+
+                    <toolkit:SettingsCard Description="Sql Server Ayarlarını Belirtiniz" Header="SQL SERVER (IP VEYA local)">
+                        <toolkit:SettingsCard.HeaderIcon>
+                            <FontIcon Glyph="&#xE88A;"/>
+                        </toolkit:SettingsCard.HeaderIcon>
+                        <Grid ColumnSpacing="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBox HorizontalAlignment="Stretch" Grid.Column="0" Header="Sql Server" PlaceholderText="local veya ıp"/>
+                        </Grid>
+                    </toolkit:SettingsCard>
+
+                    <toolkit:SettingsCard Description="Sql Kullanıcı Adını Girdiğiniz Alan" Header="SQL KULLANICI ADI">
+                        <toolkit:SettingsCard.HeaderIcon>
+                            <FontIcon Glyph="&#xE77B;"/>
+                        </toolkit:SettingsCard.HeaderIcon>
+                        <Grid ColumnSpacing="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBox HorizontalAlignment="Stretch" Grid.Column="0" Header="Sql User Name" PlaceholderText="User Name"/>
+                        </Grid>
+                    </toolkit:SettingsCard>
+
+                    <toolkit:SettingsCard Description="Sql Parolasını Girdiğiniz Alan" Header="SQL PAROLASI">
+                        <toolkit:SettingsCard.HeaderIcon>
+                            <SymbolIcon Symbol="Memo"/>
+                        </toolkit:SettingsCard.HeaderIcon>
+                        <Grid ColumnSpacing="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox HorizontalAlignment="Stretch" Grid.Column="0" Header="Sql Password" PlaceholderText="Parola"/>
+                        </Grid>
+                    </toolkit:SettingsCard>
+
+                    <toolkit:SettingsCard Description="Sql Bağlantısını Sağladıktan Sonra Veritabanı Seçimi Yapınız" Header="SQL BAĞLANTISI">
+                        <toolkit:SettingsCard.HeaderIcon>
+                            <FontIcon Glyph="&#xE703;"/>
+                        </toolkit:SettingsCard.HeaderIcon>
+                        <Grid ColumnSpacing="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200"/>
+                            </Grid.ColumnDefinitions>
+                            <Button HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Grid.Column="3" Content="Bağlantıyı Sağla"/>
+                        </Grid>
+                    </toolkit:SettingsCard>
+
+                    <toolkit:SettingsCard Description="Sql Veritabanı Seçimi Yaptıktan Sonra Kaydedin Ve Lütfen Uygulamayı Yeniden Başlatın" Header="SQL VERİTABANI">
+                        <toolkit:SettingsCard.HeaderIcon>
+                            <FontIcon Glyph="&#xE968;"/>
+                        </toolkit:SettingsCard.HeaderIcon>
+                        <Grid ColumnSpacing="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200"/>
+                            </Grid.ColumnDefinitions>
+                            <AutoSuggestBox HorizontalAlignment="Stretch" Grid.Column="0" Header="Sql Database" PlaceholderText="Database Seçiniz"/>
+                        </Grid>
+                    </toolkit:SettingsCard>
+
+                </toolkit:SettingsExpander.Items>
+            </toolkit:SettingsExpander>
+        </StackPanel>
+    </StackPanel>
+</Page>

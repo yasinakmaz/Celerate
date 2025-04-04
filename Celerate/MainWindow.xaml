@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="Celerate.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Celerate"
+    xmlns:controls="using:CommunityToolkit.WinUI.Controls"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Celerate">
+
+    <Grid>
+        <NavigationView x:Name="NvView"
+                         IsBackButtonVisible="Auto"
+                         SelectionFollowsFocus="Disabled"
+                         IsTabStop="False"
+                         Background="#2f3640"
+                         IsPaneOpen="True"
+                         OpenPaneLength="300"
+                         PaneDisplayMode="Left">
+            <NavigationView.AutoSuggestBox>
+                <AutoSuggestBox AutomationProperties.Name="Search"
+                            PlaceholderText="Arama Yapınız..."
+                            QueryIcon="Find" />
+            </NavigationView.AutoSuggestBox>
+            <NavigationView.MenuItems>
+                <NavigationViewItemHeader Content="Home"/>
+                <NavigationViewItem Content="Dashboard" Tag="DashboardPage">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xF246;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItemHeader Content="Stok"/>
+
+                <NavigationViewItem Content="Hızlı Stok Giriş">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xEB9D;"/>
+                    </NavigationViewItem.Icon>
+
+                    <NavigationViewItem.MenuItems>
+                        <NavigationViewItem Content="Hızlı Alış Faturası Giriş" Tag="DashboardPage">
+                            <NavigationViewItem.Icon>
+                                <SymbolIcon Symbol="List"/>
+                            </NavigationViewItem.Icon>
+                        </NavigationViewItem>
+                    </NavigationViewItem.MenuItems>
+                </NavigationViewItem>
+
+                <NavigationViewItem Content="Toplu Güncelleme İşlemleri" Tag="DashboardPage">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xF246;"/>
+                    </NavigationViewItem.Icon>
+
+                    <NavigationViewItem.MenuItems>
+                        <NavigationViewItem Content="Stok Güncelleme" Tag="DashboardPage">
+                            <NavigationViewItem.Icon>
+                                <SymbolIcon Symbol="List"/>
+                            </NavigationViewItem.Icon>
+                        </NavigationViewItem>
+
+                        <NavigationViewItem Content="Cari Güncelleme" Tag="DashboardPage">
+                            <NavigationViewItem.Icon>
+                                <SymbolIcon Symbol="List"/>
+                            </NavigationViewItem.Icon>
+                        </NavigationViewItem>
+                    </NavigationViewItem.MenuItems>
+
+                </NavigationViewItem>
+            </NavigationView.MenuItems>
+
+
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <controls:PropertySizer Grid.Column="0"
+                        Binding="{x:Bind NvView.OpenPaneLength, Mode=TwoWay}"
+                        Maximum="440"
+                        Minimum="52"
+                        Visibility="{x:Bind NvView.IsPaneOpen, Mode=OneWay}" />
+
+                <muxc:Frame x:Name="ContentFrame" 
+                       Grid.Column="1"
+                       VerticalAlignment="Stretch" 
+                       HorizontalAlignment="Stretch"/>
+            </Grid>
+        </NavigationView>
+    </Grid>
+</Window>

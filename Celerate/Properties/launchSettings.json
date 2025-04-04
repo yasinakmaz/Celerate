@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Celerate (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Celerate (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

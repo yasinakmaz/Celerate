@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="Celerate.Pages.UpdateWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Celerate.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Celerate Güncelleme">
+
+    <Grid Padding="25" Background="#2f3640">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="15">
+            <TextBlock x:Name="StatusText" Text="Güncelleme Kontrol Ediliyor..." FontSize="18" FontWeight="Bold" TextAlignment="Center" Foreground="White"/>
+            
+            <Grid>
+                <ProgressBar x:Name="ProgressBar" Width="400" Height="8" Minimum="0" Maximum="100" Foreground="#2196F3"/>
+            </Grid>
+            
+            <TextBlock x:Name="FileText" Text="Dosya: -" FontSize="14" Foreground="LightGray" TextAlignment="Center" TextWrapping="Wrap"/>
+            <TextBlock x:Name="ProgressText" Text="" FontSize="14" Foreground="LightGray" TextAlignment="Center"/>
+            
+            <StackPanel x:Name="ActionPanel" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="12" Margin="0,10,0,0">
+                <Button x:Name="PauseResumeButton" Content="Durdur" Click="PauseResumeButton_Click" 
+                        Background="#2f3640" BorderBrush="#2196F3" Foreground="White" MinWidth="110" Padding="12,5"/>
+                <Button x:Name="ManualUpdateButton" Content="Manuel Yükle" Click="ManualUpdateButton_Click" 
+                        Background="#2f3640" BorderBrush="#2196F3" Foreground="White" MinWidth="110" Padding="12,5"/>
+                <Button x:Name="CloseButton" Content="Kapat" Click="CloseButton_Click" 
+                        Background="#2f3640" BorderBrush="#FF5252" Foreground="White" MinWidth="110" Padding="12,5"/>
+            </StackPanel>
+            
+            <StackPanel x:Name="ContinueUpdatePanel" Visibility="Collapsed" Spacing="10" Margin="0,10,0,0">
+                <TextBlock Text="Güncelleme işlemi durduruldu" Foreground="White" FontWeight="SemiBold" FontSize="16" TextAlignment="Center"/>
+                <TextBlock Text="Güncelleme işlemine devam etmek ister misiniz?" Foreground="LightGray" TextAlignment="Center"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="12" Margin="0,10,0,0">
+                    <Button x:Name="ContinueUpdateButton" Content="Güncellemeye Devam Et" Click="ContinueUpdateButton_Click" 
+                            Background="#2196F3" Foreground="White" MinWidth="165" Padding="12,5"/>
+                    <Button x:Name="CancelUpdateButton" Content="İptal" Click="CloseButton_Click" 
+                            Background="#2f3640" BorderBrush="#AAAAAA" Foreground="White" MinWidth="165" Padding="12,5"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel x:Name="UpdateNotificationPanel" Visibility="Collapsed" Spacing="10" Margin="0,15,0,0">
+                <TextBlock Text="Yeni bir güncelleme mevcut" Foreground="White" FontWeight="SemiBold" FontSize="16" TextAlignment="Center"/>
+                <TextBlock x:Name="UpdateVersionText" Text="Mevcut Sürüm: 1.0.0 → Yeni Sürüm: 1.1.0" Foreground="LightGray" TextAlignment="Center"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="12" Margin="0,10,0,0">
+                    <Button x:Name="UpdateButton" Content="Güncelle" Click="UpdateButton_Click" 
+                            Background="#2196F3" Foreground="White" MinWidth="120" Padding="12,5"/>
+                    <Button x:Name="SkipButton" Content="Şimdi Değil" Click="SkipButton_Click" 
+                            Background="#2f3640" BorderBrush="#AAAAAA" Foreground="White" MinWidth="120" Padding="12,5"/>
+                </StackPanel>
+            </StackPanel>
+            
+            <StackPanel x:Name="ErrorPanel" Visibility="Collapsed" Spacing="10" Margin="0,15,0,0">
+                <TextBlock Text="Güncelleme sırasında bir hata oluştu:" Foreground="#FF5252" FontWeight="SemiBold"/>
+                <Border Background="#3a4149" BorderBrush="#FF5252" BorderThickness="1" Padding="12" CornerRadius="4">
+                    <TextBlock x:Name="ErrorText" Text="" TextWrapping="Wrap" Foreground="#FF5252"/>
+                </Border>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="12" Margin="0,10,0,0">
+                    <Button x:Name="CopyErrorButton" Content="Hatayı Kopyala" Click="CopyErrorButton_Click" 
+                            Background="#2f3640" BorderBrush="#AAAAAA" Foreground="White" Padding="12,5"/>
+                    <Button x:Name="RetryButton" Content="Tekrar Dene" Click="RetryButton_Click" 
+                            Background="#2196F3" Foreground="White" Padding="12,5"/>
+                    <Button x:Name="ContinueButton" Content="Devam Et" Click="ContinueButton_Click" 
+                            Background="#2f3640" BorderBrush="#AAAAAA" Foreground="White" Padding="12,5"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
